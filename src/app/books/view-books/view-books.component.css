@@ -1,0 +1,70 @@
+#nav{
+    background-color: rgb(111, 135, 138);
+    
+}
+
+#links a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  
+}
+hr{
+    color: white;
+}
+
+a div{
+    text-align: center;
+    font-size: large;
+}
+
+.a{
+    text-align: end;
+}
+
+#f{
+    font-weight: bold;
+}
+
+h3{
+    color: rgb(28, 11, 54);
+}
+
+#anim{
+    transition: .5s ease-out;
+}
+
+#anim:hover{
+    transform: scale(1.07);
+}
+
+.row{
+    background-color: rgb(65, 84, 84);;
+}
+
+.card{
+   
+    background-color:rgb(244, 237, 237);
+    border-radius: 10px;
+}
+
+.head{
+    color: rgb(55, 55, 55);
+}
+
+
+
+.star-rating {
+    font-size: 1.5rem;
+  }
+  
+  .star-rating .fa {
+    cursor: pointer;
+    color: #ddd; /* Default empty star color */
+  }
+  
+  .star-rating .fa.checked {
+    color: #ffd700; /* Color for checked stars */
+  }
+
+  

@@ -1,0 +1,71 @@
+<div class="container w-70 my-4 ">
+
+    <div class="row m-5 text-center border rounded border-dark  ">
+        <div class="col-lg-6 mt-5">
+            <img class="w-100" src="https://i.postimg.cc/k5ggmHpF/badd.jpg" alt="">
+        </div>
+
+
+        <div class="col-lg-6 " *ngIf="!editClicked" id="profile">
+
+
+            <h1 class=" mt-5">Update Book</h1>
+            <form (ngSubmit)="updateData()" class="p-2">
+                <div class='text-center'>
+                    <label for="p1">
+                        <input (change)="getFile($event)"  style="display: none;" type="file" id="p1">
+                        <img class=" w-50 shadow m-3" [src]="images" alt="">
+                    </label>
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.bookname" type="text" placeholder="Book Name" name="name"
+                        class="form-control" id="Name1">
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.authorname" type="text" placeholder="Author Name" name="AuthorName"
+                        class="form-control" id="aname1">
+                </div>
+
+
+
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.description" type="text" placeholder="Description" name="description"
+                        class="form-control" id="description">
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.publisher" type="text" placeholder="Publisher" name="publisher"
+                        class="form-control" id="publisher">
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.publishingdate" type="date" placeholder="Publish Date" name="pdate"
+                        class="form-control" id="aname1">
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.pages" type="text" placeholder="Pages" name="pages"
+                        class="form-control" id="aname1">
+                </div>
+
+                <div class="mb-3 ">
+                    <input [(ngModel)]="bookData.price" type="text" placeholder="Price" name="price"
+                        class="form-control" id="price">
+                </div>
+                <!-- <div class="mb-3 " >
+                    <input type="file" placeholder="Author Name" name="AuthorName" class="form-control" id="aname1"
+                        >
+                </div> -->
+
+                <div class="my-5">
+                    <button type="submit" class="btn btn-primary w-50 rounded">Update</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

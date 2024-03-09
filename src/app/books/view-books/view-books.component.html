@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-lg-2 " id="nav">
+        <h3 class=" ms-4 ">Welcome {{UserName}}</h3>
+        <div id="links" class="mt-5">
+
+
+
+
+
+
+            <a>
+                <div (click)="logout()">
+                    <strong>
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>
+                        Logout
+                    </strong>
+                </div>
+            </a>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="col-lg-10">
+        <div class="container  mt-5" id="search">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-center">
+
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Book Name</label>
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input [(ngModel)]="bookName" name="search" type="text" class="form-control"
+                                id="inlineFormInputGroupUsername" placeholder="Search book and author">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- </div> -->
+
+            <div class="row my-5 ">
+
+
+                <div *ngFor="let i of allbook | search:bookName:'name' |search:authorName:'name' | sort:sortOrder  | paginate: { itemsPerPage: 5, currentPage: p}"
+                    class="card   col-md-6 m-5" style="width: 300px; " id="anim">
+                    <a routerLink="/books/view-books/single/{{i.id}}" style="text-decoration: none;">
+
+
+
+
+                        <img [src]="i.images " class="card-img-top mt-4 " height="200px">
+                    </a>
+
+                        <div class="card-body ">
+                            <div class="">
+                                <!-- <img [src]="i.image" alt="{{i.bname}} Image"> -->
+                                <h3 class="card-title head mt-2 text-center">{{i.bookname}}</h3>
+                                <h5 class="card-title text-dark mt-4">
+                                    <span id="f" class="fs-5 ">Author:
+                                    </span>{{i.authorname}}</h5>
+
+                                    <div class="star-rating text-center m-5">
+                                        <span class="fa" (click)="addReview(i.id, 1)" [class.checked]="i.rating >= 1">&#xf005;</span>
+                                        <span class="fa" (click)="addReview(i.id, 2)" [class.checked]="i.rating >= 2">&#xf005;</span>
+                                        <span class="fa" (click)="addReview(i.id, 3)" [class.checked]="i.rating >= 3">&#xf005;</span>
+                                        <span class="fa" (click)="addReview(i.id, 4)" [class.checked]="i.rating >= 4">&#xf005;</span>
+                                        <span class="fa" (click)="addReview(i.id, 5)" [class.checked]="i.rating >= 5">&#xf005;</span>
+                                       
+                                      </div>
+
+                            </div>
+
+                        </div>
+
+
+                
+
+                </div>
+
+
+            </div>
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+            </div>
+        </div>
+
+
+
+    </div>

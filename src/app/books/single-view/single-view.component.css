@@ -1,0 +1,21 @@
+#h{
+    color: rgb(52, 4, 91);
+}
+
+#f{
+   
+    font-weight: bold;
+}
+
+.star-rating {
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+    color: #ffa500;
+}
+
+img{
+    margin-top: 100px;
+}

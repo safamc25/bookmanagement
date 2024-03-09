@@ -1,0 +1,53 @@
+#nav{
+    background-color: rgb(111, 135, 138);
+    
+}
+
+#links a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  
+}
+hr{
+    color: white;
+}
+
+a div{
+    text-align: center;
+    font-size: large;
+}
+
+.a{
+    text-align: end;
+}
+
+#f{
+    font-weight: bold;
+}
+
+h3{
+    color: rgb(77, 8, 87);
+}
+
+#anim{
+    transition: .5s ease-out;
+}
+
+#anim:hover{
+    transform: scale(1.07);
+}
+
+.row{
+    background-color: rgb(178, 179, 179);;
+}
+
+.card{
+   
+    background-color:rgb(240, 237, 237);
+    border-radius: 10px;
+}
+
+.head{
+    color: rgb(55, 55, 55);
+}

@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-lg-2 " id="nav">
+        <h3 class=" ms-4 ">Welcome {{AdminUserName}}</h3>
+        <div id="links" class="mt-5">
+           
+            <a routerLink="add-user">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-user-plus me-2"></i>
+                        Add New User
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <a routerLink="add-book">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-book-medical me-2"></i>
+                        Add New book
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+
+
+
+            <a>
+                <div (click)="logout()">
+                    <strong>
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>
+                        Logout
+                    </strong>
+                </div>
+            </a>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="col-lg-10">
+        <div class="container  mt-5" id="search">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-center">
+
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Book Name</label>
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input [(ngModel)]="bookName" name="search" type="text" class="form-control"
+                                id="inlineFormInputGroupUsername" placeholder="Search book and author">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-end ">
+
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-filter"></i> Filter
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                               <li> <button (click)="onSortOrderChange('lowToHigh')" class="dropdown-item active" href="#">Low to High</button></li>
+                               <li> <button (click)="onSortOrderChange('highToLow')" class="dropdown-item inactive" href="#">High to Low</button></li>
+                               <li> <button (click)="onSortOrderChange('removeFilter')" class="dropdown-item filter" href="#">Remove Filter</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <!-- </div> -->
+
+                <div class="row my-5 " >
+
+
+                    <div *ngFor="let i of allbook | search:bookName:'name' | search:authorName:'name'| sort:sortOrder  | paginate: { itemsPerPage: 5, currentPage: p}" class="card   col-md-6 m-5" style="width: 300px; " id="anim">
+                       
+
+
+                        <img [src]="i.images " class="card-img-top mt-4 " height="250px">
+
+                        <div class="card-body ">
+                            <div class="">
+                                <!-- <img [src]="i.image" alt="{{i.bname}} Image"> -->
+                                <h3 class="card-title head mt-2 text-center">{{i.bookname}}</h3>
+                                <h5 class="card-title text-dark mt-4"><span id="f" class="fs-5 ">Author: </span>{{i.authorname}}</h5>
+                                <p class="card-title text-dark"><span id="f" class="fs-5 ">Description:</span> {{i.description}}</p>
+                                <p class="card-title text-dark"><span id="f" class="fs-5 ">Publisher:</span> {{i.publisher}}</p>
+                                <p class="card-title text-dark"><span id="f" class=" fs-5">Published Date:</span> {{i.publishingdate}}</p>
+                                <p class="card-title text-dark"><span id="f" class=" fs-5">pages:</span> {{i.pages}}</p>
+                                <p class="card-text  "><span id="f" class=" fs-5">Price: ₹</span> {{i.price}}</p>
+                            </div>
+                            <div class="a">
+                                <a routerLink="edit-book/{{i.id}}" class=" p-2 rounded ">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a  (click)="removeBook(i.id) "class="m-2 p-2 rounded ">
+                                    <i class="fa-solid fa-trash" style="color: #db0a0a;"></i>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+               <div class="text-center">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    
+               </div>
+            </div>
+
+
+
+        </div>

@@ -1,0 +1,32 @@
+.container{
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgb(50, 48, 48);
+    background-color: whitesmoke;
+    background-image: url('https://i.postimg.cc/qMXTmWXS/library.jpg');
+    /* width: 150px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+h1{
+    /* color: rgb(113, 57, 1); */
+    color: rgba(111,105,49,1);
+    font-weight: bolder;
+    
+    /* text-align: center; */
+}
+
+.row{
+    margin-left: 350px;
+}
+
+@media(max-width:500px){
+   
+    .row{
+        margin-left: 0px;
+        margin-right: 50px;
+    }
+}

@@ -1,0 +1,47 @@
+<div class="container w-70 my-4 ">
+
+    <div class="row m-5 text-center border rounded border-dark  ">
+        <div class="col-lg-6 mt-5">
+            <img class="w-100" src="https://i.postimg.cc/nrLZwzqy/add.avif" alt="">
+        </div> 
+        <div class="col-lg-6 " >
+
+            <h1 class="text-primary mt-5">Add New User</h1>
+            <form (ngSubmit)="add()" [formGroup]="userFormModel" class="p-5" >
+                <div class="mb-3 " >
+                    <input formControlName="name" type="text" placeholder="Name" name="name" class="form-control" id="Name1"
+                        aria-describedby="nameHelp">
+                </div>
+                <div class="ms-5" *ngIf="userFormModel.get('name')?.errors && userFormModel.get('name')?.touched">
+                    <p class="text-danger">Please enter a valid name</p>
+                  </div>
+                <div class="mb-3 " >
+                    <input formControlName="email" type="email" placeholder="Email" name="email" class="form-control" id="Email1"
+                        aria-describedby="emailHelp">
+                </div>
+
+                <div class="ms-5" *ngIf="userFormModel.get('email')?.errors && userFormModel.get('email')?.touched">
+                    <p class="text-danger">Please enter a valid email</p>
+                  </div>
+
+                  <div class="mb-3 " >
+                    <input formControlName="mobno" type="text" placeholder="Mobile no" name="mobno" class="form-control" id="mob1"
+                        aria-describedby="mobHelp">
+                </div>
+
+                <div class="ms-5" *ngIf="userFormModel.get('mobno')?.errors && userFormModel.get('mobno')?.touched">
+                    <p class="text-danger">Please enter a valid mobile number</p>
+                  </div>
+                
+              
+
+
+            <div class="my-5">
+                <button  type="submit" class="btn btn-primary w-50 rounded">Add</button>
+            </div>
+
+        </form>
+        </div>
+
+    </div>
+</div>

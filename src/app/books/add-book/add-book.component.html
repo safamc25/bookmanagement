@@ -1,0 +1,60 @@
+<div class="container w-70 my-4 ">
+
+    <div class="row m-5 text-center border rounded border-dark  ">
+        <div class="col-lg-6 mt-5">
+            <img class="w-100" src="https://i.postimg.cc/k5ggmHpF/badd.jpg"  alt="">
+        </div> 
+        <div class="col-lg-6 " >
+
+            <h1 class=" mt-5">Add New Book</h1>
+            <form (ngSubmit)="add()" [formGroup]="bookFormModel" class="p-5" >
+                <div class="mb-3 " >
+                    <input formControlName="bname" type="text" placeholder="Book Title" name="name" class="form-control" id="Name1"
+                        >
+                </div>
+                
+                <div class="mb-3 " >
+                    <input formControlName="aname" type="text" placeholder="Author Name" name="AuthorName" class="form-control" id="aname1"
+                        >
+                </div>
+
+               
+                
+              
+                <div class="mb-3 " >
+                    <input formControlName="description" type="text" placeholder="Description" name="description" class="form-control" id="description"  >
+                </div>
+
+                <div class="mb-3 " >
+                    <input formControlName="publisher" type="text" placeholder="Publisher" name="publisher" class="form-control" id="publisher"
+                        >
+                </div>
+
+                <div class="mb-3 " >
+                    <input formControlName="pubdate" type="date" placeholder="Publish Date" name="pdate" class="form-control" id="pdate"
+                        >
+                </div>
+
+                <div class="mb-3 " >
+                    <input formControlName="pages" type="text" placeholder="Pages" name="pages" class="form-control" id="page"
+                        >
+                </div>
+
+                <div class="mb-3 " >
+                    <input formControlName="price" type="text" placeholder="Price" name="price" class="form-control" id="price" >
+                </div>
+
+                <div class="mb-3 " >
+                    <input formControlName="images" type="file" (change)="getFile($event)" placeholder="image" name="image" class="form-control" id="image">
+                    <img class=" w-75 mt-5 shadow" [src]="images" alt=" no image selected">
+                </div>
+
+            <div class="my-5">
+                <button  type="submit" class="btn btn-primary w-50 rounded">Add</button>
+            </div>
+
+        </form>
+        </div>
+
+    </div>
+</div>

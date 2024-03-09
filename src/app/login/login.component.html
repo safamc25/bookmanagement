@@ -1,0 +1,38 @@
+<div class="container w-150  my-4">
+
+    <div class="row ">
+      
+        <div class="col-lg-6 p-5 m-5 ">
+            <h1 class=" text-center ">Welcome</h1>
+            <h3 class="text-center text-white mt-1">Sign in to your account</h3>
+
+            <form (ngSubmit)="login()" [formGroup]="LoginFormModel" class="form   mt-5">
+                
+                    <div class="form-floating my-3 ">
+                        
+                        <input formControlName="email"  name="email1" type="email" class="form-control" placeholder="name@gmail.com">
+                        <label for="floatingInput text-dark" class="form-label">Email Address</label>
+                      </div>
+
+                      <div class="ms-5" *ngIf="LoginFormModel.get('email')?.errors && LoginFormModel.get('email')?.touched">
+                        <p class="text-warning">Please enter a valid email</p>
+                      </div>
+                
+                      <div class="form-floating  ">
+                        
+                        <input formControlName="pswd"  name="ps1" type="password" class="form-control" placeholder="password">
+                        <label for="floatingInput text-dark" class="form-label">Password</label>
+                      </div>
+                
+                
+
+                <div class="ms-5" *ngIf="LoginFormModel.get('pswd')?.errors && LoginFormModel.get('pswd')?.touched">
+            <p class="text-warning">include letters and numbers only </p>
+          </div>
+                <div class=" my-5">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
